@@ -13,27 +13,29 @@ int main() {
 
     enterArrayData(arr, arraySize);
     outputArrayData(arr, arraySize);
-    cout << "Sum of values: " << sumArray(arr, arraySize);
+    cout << "Sum of values: " << sumArray(arr, arraySize) << endl;
+    delete []arr;
+    arr = nullptr;
     return 0;
 }
-
+//This function takes our dynamic array and its size as input and facilitates user input for its double values
 void enterArrayData(double* array, int size) {
     cout << "Data entry for the array: " << endl;
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++) {
         cout << "    > Element #" << i << ": ";
         cin >> *(array + i);
-        cout << endl;
     }
     cout << "Data entry complete." << endl;
 }
+//This function takes our dynamic array and its size as input and outputs the arrays elements cleanly using pointer notation
 void outputArrayData(double* array, int size) {
     cout << "Outputting array elements: ";
-    for (int i = 0; i < size; i++){
+    for (int i = 0; i < size; i++) {
         cout << *(array + i) << " ";
     }
     cout << endl;
 }
-
+//This function takes our dynamic array and its size as input and sums all its values, then returns them
 double sumArray(double* array, int size) {
     double sum = 0.0;
     for (int i = 0; i < size; i++){
